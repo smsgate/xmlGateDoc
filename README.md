@@ -1,3 +1,24 @@
+* [Общие принципы отправки](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%9E%D0%B1%D1%89%D0%B8%D0%B5-%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D1%8B-%D0%BE%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8)
+    * [Пример передачи XML документа на phр](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%87%D0%B8-xml-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0-%D0%BD%D0%B0-php)
+    * [Пример многопоточной передачи XML документа на php](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D0%BE%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9-%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%87%D0%B8-xml-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0-%D0%BD%D0%B0-php)
+* [Отправка SMS, Flash SMS, WAP-Push](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0-sms-flash-sms-wap-push)
+* [Запрос статуса SMS сообщения (первый способ)](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81%D0%B0-sms-%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%B5%D1%80%D0%B2%D1%8B%D0%B9-%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1)
+* [Получение статуса SMS сообщения (второй способ)](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81%D0%B0-sms-%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2%D1%82%D0%BE%D1%80%D0%BE%D0%B9-%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1)
+* [Запрос проверки баланса](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8-%D0%B1%D0%B0%D0%BB%D0%B0%D0%BD%D1%81%D0%B0)
+* [Запрос на получение списка отправителей](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%BE%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9)
+* [Запрос входящих SMS]()
+* [Запрос на получение информации по номеру телефона]()
+* [Запрос на получение списка баз]()
+* [Запрос на изменение параметров/добавление/удаление баз]()
+* [Запрос на получение списка абонентов базы](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%B0%D0%B1%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2-%D0%B1%D0%B0%D0%B7%D1%8B)
+* [Запрос на добавление/редактирование/удаление абонентов базы](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%B1%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2-%D0%B1%D0%B0%D0%B7%D1%8B)
+* [Запрос на получение списка номеров из СТОП-листа](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%B2-%D0%B8%D0%B7-%D0%A1%D0%A2%D0%9E%D0%9F-%D0%BB%D0%B8%D1%81%D1%82%D0%B0)
+* [Запрос на добавление/удаление абонентов в СТОП-лист](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%B7%D0%B0%D0%BF%D0%BB%D0%B0%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-sms)
+* [Запрос на получение списка запланированных SMS](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%B7%D0%B0%D0%BF%D0%BB%D0%B0%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-sms)
+* [Запрос на удаление запланированной SMS]()
+* [Запрос на получение времени изменения чего-либо](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D1%87%D0%B5%D0%B3%D0%BE-%D0%BB%D0%B8%D0%B1%D0%BE)
+* [Запрос проверки времени]()
+
 # Общие принципы отправки
 На  определенный   адрес   сервера   отправляются   XML   документы   (описание   XML документов, их назначение и адреса сервера приведены ниже). При этом используется POST метод.
 
@@ -396,6 +417,7 @@ error - текст ошибки может принимать следующие
     1. order – оформляется 
     2. completed - готов к использованию 
     3. rejected – отклонен 
+
 # Запрос входящих SMS
 **Адрес сервера:** 
 ```
@@ -446,6 +468,7 @@ XML-документ:
 * **prefix** - префикс. Начальная часть текста SMS, по которой было определено, что эта SMS принадлежит именно этому клиенту. (Используется если один и тот же номер используется разными клиентами.) 
 * **phone** - номер телефона, на который бала отправлена SMS.
 * **sms** - текст смс
+
 # Запрос на получение информации по номеру телефона
 **Адрес сервера:**
 ```
@@ -882,6 +905,7 @@ https://имя_хоста/xml/list_scheduled.php
 * **name_delivery**  - Название рассылки.
 * **time_send** - дата и время отправки в формате: YYYY-MM-DDHH:MM где, YYYY-год, MM-месяц, DD-день, HH-часы, MM-минуты. 
 * **validity_period** - дата и время, после которых не будут делаться попытки доставить SMS в формате: YYYY-MM-DDHH:MM:SS где, YYYY-год, MM-месяц, DD-день, HH-часы, MM-минуты, SS-секунды. 
+
 # Запрос на удаление запланированной SMS
 Адрес сервера: 
 ```
@@ -971,6 +995,7 @@ XML-документ:
 ```
 Где
 * **time_update** - время последнего изменения объекта
+
 # Запрос проверки времени
 **Адрес сервера:**
 ```
