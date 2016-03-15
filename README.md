@@ -1,3 +1,5 @@
+# Содержание
+
 * [Общие принципы отправки](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%9E%D0%B1%D1%89%D0%B8%D0%B5-%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D1%8B-%D0%BE%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8)
     * [Пример передачи XML документа на phр](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%87%D0%B8-xml-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0-%D0%BD%D0%B0-php)
     * [Пример многопоточной передачи XML документа на php](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D0%BE%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9-%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%87%D0%B8-xml-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0-%D0%BD%D0%B0-php)
@@ -6,8 +8,8 @@
 * [Получение статуса SMS сообщения (второй способ)](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81%D0%B0-sms-%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2%D1%82%D0%BE%D1%80%D0%BE%D0%B9-%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1)
 * [Запрос проверки баланса](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8-%D0%B1%D0%B0%D0%BB%D0%B0%D0%BD%D1%81%D0%B0)
 * [Запрос на получение списка отправителей](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%BE%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D0%B5%D0%B9)
-* [Запрос входящих SMS]()
-* [Запрос на получение информации по номеру телефона]()
+* [Запрос входящих SMS](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%B2%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D1%85-sms)
+* [Запрос на получение информации по номеру телефона](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8-%D0%BF%D0%BE-%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D1%83-%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D0%B0)
 * [Запрос на получение списка баз]()
 * [Запрос на изменение параметров/добавление/удаление баз]()
 * [Запрос на получение списка абонентов базы](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%B0%D0%B1%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2-%D0%B1%D0%B0%D0%B7%D1%8B)
@@ -15,9 +17,9 @@
 * [Запрос на получение списка номеров из СТОП-листа](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%B2-%D0%B8%D0%B7-%D0%A1%D0%A2%D0%9E%D0%9F-%D0%BB%D0%B8%D1%81%D1%82%D0%B0)
 * [Запрос на добавление/удаление абонентов в СТОП-лист](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%B7%D0%B0%D0%BF%D0%BB%D0%B0%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-sms)
 * [Запрос на получение списка запланированных SMS](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%B7%D0%B0%D0%BF%D0%BB%D0%B0%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-sms)
-* [Запрос на удаление запланированной SMS]()
+* [Запрос на удаление запланированной SMS](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0%D0%BF%D0%BB%D0%B0%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B9-sms)
 * [Запрос на получение времени изменения чего-либо](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D1%87%D0%B5%D0%B3%D0%BE-%D0%BB%D0%B8%D0%B1%D0%BE)
-* [Запрос проверки времени]()
+* [Запрос проверки времени](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8)
 
 # Общие принципы отправки
 На  определенный   адрес   сервера   отправляются   XML   документы   (описание   XML документов, их назначение и адреса сервера приведены ниже). При этом используется POST метод.
@@ -518,6 +520,7 @@ https://имя_хоста/xml/def.php
 * **region** - Регион.
 * **time_zone** - Смещение времени в часах относительно времени в Москве.
 * **phone**  - номер телефона.
+
 # Запрос на получение списка баз
 **Адрес сервера:**
 ```
@@ -567,6 +570,7 @@ XML-документ:
 * **originator_birth** - отправитель поздравления.
 * **on_birth** - включены ли поздравления yes – включены, no - выключены.
 * **base** - текст поздравления.
+
 # Запрос на изменение параметров/добавление/удаление баз
 **Адрес сервера:**
 ```
