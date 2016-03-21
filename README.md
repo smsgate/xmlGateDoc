@@ -41,7 +41,7 @@ $src = '<?xml version="1.0" encoding="utf-8"?>
 </security>
 </request>'; 
 // XML-документ
-$href = 'http://server/script.php'; // адрес сервера
+$href = 'https://server/script.php'; // адрес сервера
 $ch = curl_init();
 curl_setopt ($ch, CURLOPT_HTTPHEADER, array ('Content-type: text/xml; charset=utf-8')); 
 curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
@@ -78,7 +78,7 @@ $opt = array(
 $rc = new RollingCurl("request_callback");
 $rc->window_size = 5; //колличество потоков
 foreach ($arr_xml as $data) {
-    $request = new RollingCurlRequest("http://server/script.php", "POST", $data, null, $opt);
+    $request = new RollingCurlRequest("https://server/script.php", "POST", $data, null, $opt);
     $rc->add($request);
 }
 $rc->execute();
