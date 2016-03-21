@@ -45,8 +45,8 @@ $href = 'https://server/script.php'; // адрес сервера
 $ch = curl_init();
 curl_setopt ($ch, CURLOPT_HTTPHEADER, array ('Content-type: text/xml; charset=utf-8')); 
 curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
+curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt ($ch, CURLOPT_CRLF, true); 
 curl_setopt ($ch, CURLOPT_POST, true); 
 curl_setopt ($ch, CURLOPT_POSTFIELDS, $src); 
@@ -55,39 +55,7 @@ $result = curl_exec($ch);
 curl_close($ch);
 echo $result;
 ```
-## Пример многопоточной передачи XML документа на php
-
-Если нет возможности собирать запросы в один xml, можно отправлять много xml за раз через [curl_multi](http://github.com/LionsAd/rolling-curl) . При  передачи 5 смс (1 смс 1 xml) этот метод быстрее до 3,5 раз. Не рекомендуется ставить больше 5 потоков, возможны потеря запросов с данными. Порядок запросов при таком методе не соблюдается.
-```php
-<?php
-include_once './rolling-curl-read-only/RollingCurl.php';
-
-$arr_xml = array(
-    '<?xml version="1.0" encoding="utf-8"?><request><security><login value="логин" /><password value="пароль"/></security></request>',
-    '<?xml version="1.0" encoding="utf-8"?><request><security><login value="логин" /><password value="пароль" /></security></request>',
-);
-
-$opt = array(
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_CRLF => true,
-    CURLOPT_POST => true,
-    CURLOPT_SSL_VERIFYHOST => false,
-    CURLOPT_HTTPHEADER =>  array('Content-type: text/xml; charset=utf-8'),
-);
-
-$rc = new RollingCurl("request_callback");
-$rc->window_size = 5; //колличество потоков
-foreach ($arr_xml as $data) {
-    $request = new RollingCurlRequest("https://server/script.php", "POST", $data, null, $opt);
-    $rc->add($request);
-}
-$rc->execute();
-
-function request_callback($response, $info, $request) {
-    print_r($response); //ответ сервера
-}
-```
-## Отправка SMS, Flash SMS, WAP-Push
+## Отправка SMS
 **Адрес сервера:**
 ```
 https://имя_хоста/xml/
@@ -96,17 +64,9 @@ https://имя_хоста/xml/
 ```xml
 <?xml version="1.0" encoding="utf-8" ?> 
 <request>
-<message type="flashsms или sms или wappush или vcard">
+<message type="sms">
     <sender>Отправитель 1</sender>
     <text>Текст сообщения 1</text>
-    <url>Адрес для WAP Push или vCard</url>
-    <name>Имядля vCard</name>
-    <phone cell="79033256699" work="79033256699" fax="79033256699"/>
-    <email>E-mail vCard</email>
-    <position>Должность vCard</position>
-    <organization>Организация vCard</organization>
-    <address post_office_box="абонентскийящик" street="Улица" city="город" region="Область" postal_code="Индекс" country="Страна" />
-    <additional>Дополнительнаяинформация vCard</additional>
     <abonent phone="79033256699" number_sms="1" client_id_sms="101" time_send="2001-12-31 12:34" validity_period="2001-12-31 15:34" />
     <abonent phone="79033256699" number_sms="2" client_id_sms="102" time_send="2001-12-31 12:35" />
     <abonent phone="79033256699" number_sms="10" client_id_sms="110" time_send="" />
@@ -127,36 +87,16 @@ https://имя_хоста/xml/
 ```
 Где
 * **type** - тип отправляемого SMS сообщения:
-    * **flashsms**  – flash SMS
-    * **sms**  – обычная SMS
-    * **wappush**  – WAP-Push
-    * **vcard**  – визитная карточка (vCard) 
+* **sms**  – обычная SMS
 * **sender** – отправитель SMS. Именно это значение будет выводиться на телефоне абонента в поле от кого SMS. 
-* **phone** – номер абонента, которому адресована SMS.
-* **loginvalue** - ваш логин в системе
-* **passwordvalue** - ваш пароль в системе
+* **phone** – номер абонента, которому адресована SMS. В международном формате, например, 79000000001 (Для России), 380442589632 (Для Украины) и т.д.
+* **логин** - ваш логин в системе
+* **пароль** - ваш пароль в системе
 * **number_sms**  - номер сообщения в пределах отправляемого XML документа
 * **client_id_sms** - число. Необязательный параметр, позволяет избежать повторной отправки. Если раннее с этого аккаунта уже было отправлено SMS с таким номером, то повторная отправка не производится, а возвращается номер ранее отправленного SMS. 
 * **time_send** – дата и время отправки в формате: YYYY-MM-DD hh:mm где, YYYY-год, MM-месяц, DD-день, hh-часы, mm-минуты. Если не задано, то SMS отправляется сразу же. 
 * **validity_period** – дата и время, после которых не будут делаться попытки доставить SMS в формате:  YYYY-MM-DD hh:mm , где YYYY-год, MM-месяц, DD-день, hh-часы, mm-минуты. Если не задано, то SMS имеет максимальный срок жизни. 
 
-Далее поля выбираются в зависимости от типа, отправляемого SMS (type):
-* **text** - текст обычного SMSили описание WAPссылки
-* **url** - ссылка для WAP Push или vCard
-* **name** - имя для vCard
-* **cell** - номер телефона для vCard
-* **work** - номер рабочего телефона для vCard
-* **fax** - номер факса для vCard
-* **email** - e-mail для vCard
-* **position** - должность контакта для vCard
-* **organization** – организация для vCard
-* **post_office_box** - абонентский ящик для vCard
-* **street** - улица для vCard
-* **city** - город для vCard
-* **region** - область для vCard
-* **postal_code** - индекс для vCard
-* **country** - страна для vCard
-* **additional** - дополнительная информация для vCard
 
 В ответ может быть выдан один из следующих XML-документов: 
 ### В случае возникновения ошибки в отправляемом XML-документе
@@ -197,13 +137,13 @@ https://имя_хоста/xml/
     5. Номер телефона присутствует в стоп-листе.
     6. Данное направление закрыто для вас.
     7. Данное направление закрыто.
-    8. Текст SMS отклонен модератором.
-    9. Нет отправителя.
-    10. Отправитель не должен превышать 15 символов для цифровых номеров и 11 символов для буквенно-числовых.
-    11. Номер телефона должен быть меньше 15 символов.
-    12. Нет текста сообщения.
-    13. Нет ссылки.
-    14. Укажите название контакта и, хотя бы один параметр для визитной карточки.
+    8. Недостаточно средств для отправки SMS. SMS будет отправлена как только вы пополните счет по данному направлению.
+    9. Текст SMS отклонен модератором.
+    10. Нет отправителя.
+    11. Отправитель не должен превышать 15 символов для цифровых номеров и 11 символов для буквенно-числовых.
+    12. Номер телефона должен быть меньше 15 символов. 
+    13. Нет текста сообщения.
+    14. Нет ссылки.
     15. Такого отправителя Нет.
     16. Отправитель не прошел модерацию.
 
@@ -232,8 +172,8 @@ https://имя_хоста/xml/state.php
 ```
 
 Где
-* **login value** - ваш логин в системе
-* **password value** - ваш пароль в системе
+* **логин** - ваш логин в системе
+* **пароль** - ваш пароль в системе
 * **id_sms** - номер SMS сообщения, полученный в ответном XML-документа в процессе отправки SMS сообщения. 
 
 В ответ может быть выдан один из следующих XML-документов: 
@@ -325,8 +265,8 @@ https://имя_хоста/xml/balance.php
 </request>
 ```
 Где
-* **login value** - ваш логин в системе
-* **password value** - ваш пароль в системе
+* **логин** - ваш логин в системе
+* **пароль** - ваш пароль в системе
 
 В ответ может быть выдан один из следующих XML-документов: 
 1. В случае возникновения ошибки в отправляемом XML-документе: 
@@ -399,8 +339,8 @@ https://имя_хоста/xml/originator.php
 </request>
 ```
 Где:
-* **login value** - ваш логин в системе
-* **password value** - ваш пароль в системе
+* **логин** - ваш логин в системе
+* **пароль** - ваш пароль в системе
 В ответ может быть выдан один из следующих XML-документов: 
 ### В случае возникновения ошибки в отправляемом XML-документе: 
 ```xml
