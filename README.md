@@ -44,7 +44,7 @@ $src = '<?xml version="1.0" encoding="utf-8"?>
 // XML-документ
 $href = 'https://server/script.php'; // адрес сервера
 $ch = curl_init();
-curl_setopt ($ch, CURLOPT_HTTPHEADER, array ('Content-type: text/xml; charset=utf-8'));
+curl_setopt ($ch, CURLOPT_HTTPHEADER, array ('Content-type: text/xml','charset=utf-8','Expect:'));
 curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
@@ -1028,7 +1028,7 @@ XML-документ:
 
 # Запрос на получение статистики
 
-Статистику можно получить только за последние 3 месяца. Смс старше 3 месяцев переносятся в архив. Запросить выгрузку статистики по смс старше 3 месяцев можно через вашего менеджера. 
+Статистику можно получить только за последние 3 месяца. Смс старше 3 месяцев переносятся в архив. Запросить выгрузку статистики по смс старше 3 месяцев можно через вашего менеджера.
 
 **Адрес сервера:**
 ```
