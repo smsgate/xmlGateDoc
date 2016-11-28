@@ -21,6 +21,8 @@
 * [Запрос на получение времени изменения чего-либо](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D1%87%D0%B5%D0%B3%D0%BE-%D0%BB%D0%B8%D0%B1%D0%BE)
 * [Запрос проверки времени](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8)
 * [Запрос на получение статистики](https://github.com/smsgate/xmlGateDoc#Запрос-на-получение-статистики)
+* [Запрос на получение списка шаблонов SMS](https://github.com/smsgate/xmlGateDoc#Запрос-на-получение-списка-шаблонов-sms)
+* [Запрос на изменение параметров/добавление/удаление шаблонов SMS](https://github.com/smsgate/xmlGateDoc#Запрос-на-изменение-параметровдобавлениеудаление-шаблонов-sms)
 
 # Общие принципы отправки
 На определенный адрес сервера отправляются XML документы (описание XML документов, их назначение и адреса сервера приведены ниже). При этом используется POST метод.
@@ -591,6 +593,7 @@ XML-документ:
 <base id_base=”1235”>not_found</ base>
 </response>
 ```
+
 # Запрос на получение списка абонентов базы
 **Адрес сервера:**
 ```
@@ -1111,3 +1114,117 @@ to_hour="" to_minute="" />
 * **status_translate** - статус сообщения, на русском языке
 * **part_no** - порядковый номер части СМС
 * **num_parts** - количество частей СМС
+
+# Запрос на получение списка шаблонов SMS
+
+**Адрес сервера:**
+```
+https://имя_хоста/xml/list_patterns.php
+```
+XML-документ:
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<request>
+    <security>
+        <login value="логин" />
+        <password value="пароль" />
+    </security>
+</request>
+```
+Где:
+* **login value** - ваш логин в системе
+*  **password value** - ваш пароль в системе
+
+В ответ может быть выдан один из следующих XML-документов:
+### В случае возникновения ошибки в отправляемом XML-документе:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<response>
+    <error>текст ошибки</error>
+</response>
+```
+**error** - текст ошибки может принимать следующие значения:
+
+1. Неправильный формат XML документа
+2. Неправильный логин или пароль
+3. POST данные отсутствуют
+
+### В случае получения правильного XML-документа:
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<response>
+<pattern id_pattern="1234" name="ЗаголовокШаблона1">Шаблон1</pattern>
+<pattern id_pattern="1235" name="ЗаголовокШаблона2">Шаблон2</pattern>
+</response>
+```
+Где:
+* **id_pattern** - идентификатор шаблона в системе.
+* **name** - заголовок шаблона.
+* **pattern** - текст шаблона.
+
+# Запрос на изменение параметров/добавление/удаление шаблонов SMS
+**Адрес сервера:**
+```
+https://имя_хоста/xml/patterns.php
+```
+XML-документ:
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<request>
+<security>
+    <login value="логин" />
+    <password value="пароль" />
+</security>
+<patterns>
+<pattern id_pattern="1234" name="ЗаголовокШаблона1">Шаблон1</base>
+<pattern id_pattern="1235" name="ЗаголовокШаблона2">Шаблон2</base>
+<pattern number_pattern="1" name="ЗаголовокШаблона3">Шаблон3</pattern>
+</patterns>
+<delete_patterns>
+    <pattern id_pattern="1236" />
+    <pattern id_pattern="1237" />
+</delete_patterns>
+</request>
+```
+Где:
+* **login value** - ваш логин в системе.
+* **password value** - ваш пароль в системе.
+* **id_pattern** - уникальный номер шаблона в системе. Если не указан произойдет добавление базы. При этом нужно указать параметр number_pattern.
+* **number_pattern** - номер шаблона в XML запросе. Используется для сопоставления ID добавленных шаблонов (если их было не сколько в запросе).
+* **name** - заголовок шаблона.
+* **pattern** - текст шаблона.
+
+В ответ может быть выдан один из следующих XML-документов:
+### В случае возникновения ошибки в отправляемом XML-документе:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<response>
+    <error>текст ошибки</error>
+</response>
+```
+**error** - текст ошибки может принимать следующие значения:
+
+1. Неправильный формат XML документа
+2. Неправильный логин или пароль
+3. POST данные отсутствуют
+
+### В случае получения правильного XML-документа:
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<response>
+<pattern id_pattern="1234">edit</pattern>
+<pattern id_pattern="1235">not_edit</ pattern>
+<pattern number_base="1" id_pattern="1238">insert</ pattern>
+<pattern id_pattern="1236">delete</ pattern>
+<pattern id_pattern="1237">not_found</ pattern>
+</response>
+```
+Где:
+* **id_pattern** - уникальный номер шаблона sms в системе;
+* **action** - действие, произведенное с шаблоном:
+	1. «edit» - изменение параметров шаблона;
+   2. «insert» - добавление шаблона;
+   1. not_edit - не удалось обновить шаблон. Возможно данные идентичны с обновляемым шаблоном;
+   3. «delete» - шаблон удалена;
+   4. «not_found» - шаблон с указанным идентификатором не обнаружен;    
+* **number_pattern** - номер шаблона в JSON запросе. Используется для сопоставления ID добавленных шаблона(если их было не сколько в запросе).
