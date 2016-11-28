@@ -2,8 +2,7 @@
 
 * [Общие принципы отправки](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%9E%D0%B1%D1%89%D0%B8%D0%B5-%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF%D1%8B-%D0%BE%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8)
     * [Пример передачи XML документа на phр](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%87%D0%B8-xml-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0-%D0%BD%D0%B0-php)
-    * [Пример многопоточной передачи XML документа на php](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80-%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%BF%D0%BE%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%B9-%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%87%D0%B8-xml-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0-%D0%BD%D0%B0-php)
-* [Отправка SMS, Flash SMS, WAP-Push](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%9E%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0-sms-flash-sms-wap-push)
+* [Отправка SMS, Flash SMS, WAP-Push](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#Отправка-sms)
 * [Запрос статуса SMS сообщения (первый способ)](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81%D0%B0-sms-%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%B5%D1%80%D0%B2%D1%8B%D0%B9-%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1)
 * [Получение статуса SMS сообщения (второй способ)](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%9F%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81%D0%B0-sms-%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2%D1%82%D0%BE%D1%80%D0%BE%D0%B9-%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1)
 * [Запрос проверки баланса](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8-%D0%B1%D0%B0%D0%BB%D0%B0%D0%BD%D1%81%D0%B0)
@@ -16,7 +15,7 @@
 * [Запрос на добавление/редактирование/удаление абонентов базы](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%B1%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%BE%D0%B2-%D0%B1%D0%B0%D0%B7%D1%8B)
 * [Запрос на получение списка номеров из СТОП-листа](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%B2-%D0%B8%D0%B7-%D0%A1%D0%A2%D0%9E%D0%9F-%D0%BB%D0%B8%D1%81%D1%82%D0%B0)
 * [Запрос на добавление/удаление абонентов в СТОП-лист](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%B7%D0%B0%D0%BF%D0%BB%D0%B0%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-sms)
-* [Запрос на получение списка запланированных SMS](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%BF%D0%B8%D1%81%D0%BA%D0%B0-%D0%B7%D0%B0%D0%BF%D0%BB%D0%B0%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-sms)
+* [Запрос на получение списка запланированных SMS](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#Запрос-на-получение-списка-запланированных-sms)
 * [Запрос на удаление запланированной SMS](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D1%83%D0%B4%D0%B0%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0%D0%BF%D0%BB%D0%B0%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B9-sms)
 * [Запрос на получение времени изменения чего-либо](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-%D1%87%D0%B5%D0%B3%D0%BE-%D0%BB%D0%B8%D0%B1%D0%BE)
 * [Запрос проверки времени](https://github.com/smsgate/xmlGateDoc/blob/master/README.md#%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%B8)
@@ -1223,8 +1222,8 @@ XML-документ:
 * **id_pattern** - уникальный номер шаблона sms в системе;
 * **action** - действие, произведенное с шаблоном:
 	1. «edit» - изменение параметров шаблона;
-    2. «insert» - добавление шаблона;
+	2. «insert» - добавление шаблона;
 	1. not_edit - не удалось обновить шаблон. Возможно данные идентичны с обновляемым шаблоном;
-    3. «delete» - шаблон удалена;
-    4. «not_found» - шаблон с указанным идентификатором не обнаружен;    
+	3. «delete» - шаблон удалена;
+	4. «not_found» - шаблон с указанным идентификатором не обнаружен;    
 * **number_pattern** - номер шаблона в JSON запросе. Используется для сопоставления ID добавленных шаблона(если их было не сколько в запросе).
