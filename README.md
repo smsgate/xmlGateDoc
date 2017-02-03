@@ -30,7 +30,7 @@
 ```
 Content-type: text/xml; charset=utf-8
 ```
-Кодировка XML документов UTF-8. Передаваемый XML документ не должен содержать переводов строки. Переводы строк в самих данных должны быть заменены на “\n”.
+Кодировка XML документов UTF-8. Передаваемый XML документ не должен содержать переводов строки. Переводы строк в самих данных должны быть заменены на “\n".
 
 ## Пример передачи XML документа на php
 
@@ -587,11 +587,11 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-<base id_base=”1234”>edit</base>
-<base number_base=”1” id_base=”1235”>insert</ base>
-<base number_base=”2” id_base=”1236”>edit</ base>
-<base id_base=”1235”>delete</ base>
-<base id_base=”1235”>not_found</ base>
+<base id_base="1234">edit</base>
+<base number_base="1" id_base="1235">insert</ base>
+<base number_base="2" id_base="1236">edit</ base>
+<base id_base="1235">delete</ base>
+<base id_base="1235">not_found</ base>
 </response>
 ```
 
@@ -608,7 +608,7 @@ XML-документ:
     <login value="логин" />
     <password value="пароль" />
 </security>
-<base id_base="1234" page=”1” last_update=”2011-03-25 08:39:48”/>
+<base id_base="1234" page="1" last_update="2011-03-25 08:39:48"/>
 </request>
 ```
 Где:
@@ -785,11 +785,11 @@ https://имя_хоста/xml/stop.php
     <password value="пароль" />
 </security>
 <add_stop>
-    <phone phone="79612242243” />
+    <phone phone="79612242243" />
     <phone phone="79612242244" />
 </add_stop>
 <delete_stop>
-    <phone phone="79612242243” />
+    <phone phone="79612242243" />
     <phone phone="79612242244" />
 </delete_stop>
 </request>
@@ -836,7 +836,7 @@ https://имя_хоста/xml/list_scheduled.php
     <login value="логин" />
     <password value="пароль" />
 </security>
-<scheduled page=”1”/>
+<scheduled page="1"/>
 </request>
 ```
 Где:
@@ -900,8 +900,8 @@ https://имя_хоста/xml/scheduled.php
     <password value="пароль" />
 </security>
 <delete_schedule>
-    <schedule id_sms="1234” />
-    <schedule id_sms="1235” />
+    <schedule id_sms="1234" />
+    <schedule id_sms="1235" />
 </delete_schedule>
 </request>
 ```
