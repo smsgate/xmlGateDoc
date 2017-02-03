@@ -130,7 +130,7 @@ https://имя_хоста/xml/
 * **number_sms** - номер сообщения указанный при отправке XML документа.
 * **id_sms** - номер SMS сообщения. Используется для проверки статуса SMS. Если в процессе отправки SMS произошла ошибка, то id_sms не передается.
 * **parts** - количество частей SMS.
-* **information** -   статус   сообщения   («send»),   если   SMS   была   отправлена.   Или сообщение об ошибке, если в процессе отправки SMS произошла ошибка:
+* **information** - статус сообщения («send»), если SMS была отправлена. Или сообщение об ошибке, если в процессе отправки SMS произошла ошибка:
     1. У нас закончились SMS. Для разрешения проблемы свяжитесь с менеджером.
     2. Закончились SMS.
     3. Аккаунт заблокирован.
@@ -418,8 +418,8 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-<sms id_sms="1234" date_receive="2012-01-31 12:55:55" originator="79612242243" prefix="IGRA"phone="79611111111">ТекстСМС.</sms>
-<sms id_sms="1234" date_receive="2012-01-31 12:55:55" originator="79612242243" prefix="IGRA"phone="79611111111">ТекстСМС.</sms>
+<sms id_sms="1234" date_receive="2012-01-31 12:55:55" originator="79612242243" prefix="IGRA" phone="79611111111">ТекстСМС.</sms>
+<sms id_sms="1234" date_receive="2012-01-31 12:55:55" originator="79612242243" prefix="IGRA" phone="79611111111">ТекстСМС.</sms>
 </response>
 ```
 Где
@@ -639,7 +639,7 @@ XML-документ:
 <response>
 <phones page="1" num_pages="100">
 <phone phone="79612242243" region="Новосибирск " operator="Вымпелком" name="Константин" surname="Ермолаев" patronymic="Александрович" date_birth="1984-08-21" male="m" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" last_update="2011-03-25 08:39:48" />
-<phone phone="79612242244" region="Новосибирск» operator="Вымпелком" name="Константин" surname="Ермолаев" patronymic="Александрович" date_birth="1984-08-21" male="m" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" last_update="2011-03-25 08:39:48" />
+<phone phone="79612242244" region="Новосибирск" operator="Вымпелком" name="Константин" surname="Ермолаев" patronymic="Александрович" date_birth="1984-08-21" male="m" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" last_update="2011-03-25 08:39:48" />
 </phones>
 </response>
 ```
@@ -1052,8 +1052,7 @@ XML-документ:
   <login value="логин" />
   <password value="пароль" />
 </security>
-<stats date_start="2016-08-21" date_stop="2016-08-21" state="deliver" originator="TELECOM-SMS" phone="" operator="" from_hour="00" from_minute="00"
-to_hour="" to_minute="" />
+<stats date_start="2016-08-21" date_stop="2016-08-21" state="deliver" originator="TELECOM-SMS" phone="" operator="" from_hour="00" from_minute="00" to_hour="" to_minute="" />
 </request>
 ```
 Где:
@@ -1096,7 +1095,7 @@ to_hour="" to_minute="" />
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-<stats num_stats ="100">
+<stats num_stats="100">
 <stat id_sms="324044392" id_state="1229469388" operator="МТС" name_delivery="Кабинет" phone="7980536****" originator="TELECOM-SMS" time_change_state="2016-08-10 23:04:32" time="2016-08-10 23:04:18" status="deliver" status_translate="доставлено"  text="ТЕКСТ СМС" price="1.05" part_no="1" num_parts="2"></stat>
 <stat id_sms="324044392" id_state="1229469389" operator="МТС" name_delivery="Кабинет" phone="7980536****" originator="TELECOM-SMS" time_change_state="2016-08-10 23:04:32" time="2016-08-10 23:04:18" status="deliver" text="ТЕКСТ СМС ПРОДОЛЖЕНИЕ" price="1.05" part_no="2" num_parts="2"></stat>
 </stats>
