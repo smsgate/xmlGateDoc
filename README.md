@@ -22,6 +22,8 @@
 * [Запрос на получение статистики](https://github.com/smsgate/xmlGateDoc#Запрос-на-получение-статистики)
 * [Запрос на получение списка шаблонов SMS](https://github.com/smsgate/xmlGateDoc#Запрос-на-получение-списка-шаблонов-sms)
 * [Запрос на изменение параметров/добавление/удаление шаблонов SMS](https://github.com/smsgate/xmlGateDoc#Запрос-на-изменение-параметровдобавлениеудаление-шаблонов-sms)
+* [Запрос на получение реестра имен отправителей](https://github.com/smsgate/xmlGateDoc#Запрос-на-получение-реестра-имен-отправителей)
+* [Запрос на добавление удаление имен отправителей в реестре имен отправителей](https://github.com/smsgate/xmlGateDoc#Запрос-на-добавление-удаление-имен-отправителей-в-реестре-имен-отправителей)
 
 # Общие принципы отправки
 На определенный адрес сервера отправляются XML документы (описание XML документов, их назначение и адреса сервера приведены ниже). При этом используется POST метод.
@@ -66,6 +68,10 @@ https://имя_хоста/xml/
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <request>
+<security>
+    <login value="логин" />
+    <password value="пароль" />
+</security>
 <message type="sms">
     <sender>Отправитель 1</sender>
     <text>Текст сообщения 1</text>
@@ -80,11 +86,6 @@ https://имя_хоста/xml/
     <abonent phone="79033256699" number_sms="12" client_id_sms="112" />
     <abonent phone="79033256699" number_sms="20" client_id_sms="120" />
 </message>
-
-<security>
-    <login value="логин" />
-    <password value="пароль" />
-</security>
 </request>
 ```
 Где
@@ -528,7 +529,7 @@ XML-документ:
 * **id_base** - уникальный номер базы в системе.
 * **name_base** - название базы.
 * **time_birth** - время поздравления.
-* **local_time_birth** - ччитать время поздравления относительно местного времени абонента(yes) или относительно времени системы (no).
+* **local_time_birth** - читать время поздравления относительно местного времени абонента(yes) или относительно времени системы (no).
 * **day_before** - за сколько дней до дня рождения поздравлять.
 * **originator_birth** - отправитель поздравления.
 * **on_birth** - включены ли поздравления yes – включены, no - выключены.
@@ -1229,7 +1230,160 @@ XML-документ:
 * **action** - действие, произведенное с шаблоном:
 	1. «edit» - изменение параметров шаблона;
     2. «insert» - добавление шаблона;
-	1. not_edit - не удалось обновить шаблон. Возможно данные идентичны с обновляемым шаблоном;
-    3. «delete» - шаблон удалена;
-    4. «not_found» - шаблон с указанным идентификатором не обнаружен;    
+	3. «not_edit» - не удалось обновить шаблон. Возможно данные идентичны с обновляемым шаблоном;
+    4. «delete» - шаблон удалена;
+    5. «not_found» - шаблон с указанным идентификатором не обнаружен;    
 * **number_pattern** - номер шаблона в JSON запросе. Используется для сопоставления ID добавленных шаблона(если их было не сколько в запросе).
+
+# Запрос на получение реестра имен отправителей
+
+**Адрес сервера:**
+```
+https://имя_хоста/xml/list_registry_originator.php
+```
+XML-документ:
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<request>
+    <security>
+        <login value="логин" />
+        <password value="пароль" />
+    </security>
+	<registry_originator operator="Оператор" originator="Имя отправителя" inn="ИНН"></registry_originator>
+</request>
+```
+Где:
+* **login value** - ваш логин в системе.
+* **password value** - ваш пароль в системе.
+* **registry_originator** - Фильтр вывода реестра имен отправителей:
+	* **operator** - Оператор. Доступны такие операторы как: **mts** - МТС, **mega** - Мегафон, **tele2** - Теле2. Необязательное поле.
+	* **originator** - Имя отправителя. Необязательное поле.
+	* **inn** - Идентификационный номер налогоплательщика. Необязательное поле.
+
+В ответ может быть выдан один из следующих XML-документов:
+### В случае возникновения ошибки в отправляемом XML-документе:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<response>
+    <error>текст ошибки</error>
+</response>
+```
+**error** - текст ошибки может принимать следующие значения:
+
+1. Неправильный формат XML документа
+2. Неправильный логин или пароль
+3. POST данные отсутствуют
+
+### В случае получения правильного XML-документа:
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<response>
+	<registry_originator>
+		<operator name="mts" title="МТС">
+			<originator originator="Отправитель 1" date_from="2017-05-20" legal_entity="ИП Иванов" inn="ИНН" comment="Комментраий" status="approval" status_text="Согласовано"></originator>
+			<originator originator="Отправитель 2" date_from="2017-05-20" legal_entity="ИП Иванов" inn="ИНН" comment="Комментраий" status="posted_for_approval" status_text="Подано на согласование"></originator>
+		</operator>
+		<operator name="mega" title="Мегафон">
+			<originator originator="Отправитель 1" date_from="2017-05-20" legal_entity="ИП Иванов" inn="ИНН" comment="Комментраий" status="approval" status_text="Согласовано"></originator>
+			<originator originator="Отправитель 2" date_from="2017-05-20" legal_entity="ИП Иванов" inn="ИНН" comment="Комментраий" status="posted_for_approval" status_text="Подано на согласование"></originator>
+		</operator>
+	</registry_originator>
+</response>
+```
+Где:
+* **operator name** - Оператор. mts, mega, tele2.
+* **operator ** - Заголовок оператора. МТС, Мегафон, Теле2. 
+* **originator** - Имя Отправителя.
+* **date_from** - Дата начала.
+* **legal_entity** - Юр.Лицо.
+* **inn** - Идентификационный номер налогоплательщика.
+* **comment** - Комментарий.
+* **status** - Статус:
+	1. «posted_for_approval» - Подано на согласование;
+    2. «send_for_approval» - Отправлено на согласование;
+	3. «approval» - Согласовано;
+    4. «not_approval» - Не согласовано;
+    5. «send_for_delete» - Подано на удаление;
+	6. «delete» - Удалено;
+* **status_text** - Статус, описание.
+
+# Запрос на добавление удаление имен отправителей в реестре имен отправителей
+
+**Адрес сервера:**
+```
+https://имя_хоста/xml/registry_originator.php
+```
+XML-документ:
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<request>
+    <security>
+        <login value="логин" />
+        <password value="пароль" />
+    </security>
+	<registry_originator>
+		<originator originator="Отправитель 1" legal_entity="ИП Иванов" operator="mts" inn="ИНН" comment="Комментарий"></originator>
+		<originator originator="Отправитель 1" legal_entity="ИП Иванов" operator="tele2" inn="ИНН" comment="Комментарий"></originator>
+		<originator originator="Отправитель 2" legal_entity="ИП Иванов" operator="mts" inn="ИНН"></originator>
+	</registry_originator>
+	<delete_registry_originator>
+		<originator originator="Отправитель 3"></originator>
+		<originator originator="Отправитель 4" operator="mega"></originator>
+	</delete_registry_originator>
+</request>
+```
+Где:
+* **login value** - ваш логин в системе.
+* **password value** - ваш пароль в системе.
+* **registry_originator** - Добавление имени отправителя:
+	* **originator** - Имя отправителя.
+	* **operator** - Оператор. Доступны такие операторы как: **mts** - МТС, **mega** - Мегафон, **tele2** - Теле2.
+	* **legal_entity** - Юр.Лицо.
+	* **inn** - Идентификационный номер налогоплательщика.
+	* **comment** - Комментарий. Необязательное поле.
+* **delete_registry_originator** - Удаление имени отправителя:
+	* **originator** - Имя отправителя.
+	* **operator** - Оператор. Доступны такие операторы как: **mts** - МТС, **mega** - Мегафон, **tele2** - Теле2. Необязательное поле. Если отсутствует, будет удалено имя отправителя по всем операторам.
+	
+
+В ответ может быть выдан один из следующих XML-документов:
+### В случае возникновения ошибки в отправляемом XML-документе:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<response>
+    <error>текст ошибки</error>
+</response>
+```
+**error** - текст ошибки может принимать следующие значения:
+
+1. Неправильный формат XML документа
+2. Неправильный логин или пароль
+3. POST данные отсутствуют
+
+### В случае получения правильного XML-документа:
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<response>
+	<registry_originator>
+		<originator originator="Отправитель 1" operator="mts" inn="ИНН" status="add" error=""></originator>
+		<originator originator="Отправитель 1" operator="tele2" inn="ИНН" status="error" error="Описание ошибки"></originator>
+		<originator originator="Отправитель 2" operator="mts" inn="ИНН" status="add" error=""></originator>
+	</registry_originator>
+	<delete_registry_originator>
+		<originator originator="Отправитель 3" operator="" status="delete" error=""></originator>
+		<originator originator="Отправитель 4" operator="mega" status="not_found" error="Имя отправителя не обнаружено"></originator>
+	</delete_registry_originator>
+</response>
+```
+Где:
+* **registry_originator** - Добавленые имена отправителей:
+	* **originator** - Имя отправителя.
+	* **operator** - Оператор. mts, mega, tele2.
+	* **inn** - Идентификационный номер налогоплательщика.
+	* **status** - Статус. add - добавлено имя отправителя, error - ошибка.
+	* **error** - Описание ошибки.
+* **delete_registry_originator** - Удаленные имена отправителей:
+	* **originator** - Имя отправителя.
+	* **operator** - Оператор. mts, mega, tele2. Если отсутствует, удалено имя отправителя по всем операторам.
+	* **status** - Статус. not_found - подано на удаление, error - ошибка.
+	* **error** - Описание ошибки.
