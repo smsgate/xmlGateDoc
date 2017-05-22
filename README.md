@@ -1245,11 +1245,11 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <request>
-    <security>
-        <login value="логин" />
-        <password value="пароль" />
-    </security>
-	<registry_originator operator="Оператор" originator="Имя отправителя" inn="ИНН"></registry_originator>
+<security>
+	<login value="логин" />
+	<password value="пароль" />
+</security>
+<registry_originator operator="Оператор" originator="Имя отправителя" inn="ИНН"></registry_originator>
 </request>
 ```
 Где:
@@ -1278,16 +1278,16 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-	<registry_originator>
-		<operator name="mts" title="МТС">
-			<originator originator="Отправитель 1" date_from="2017-05-20" legal_entity="ИП Иванов" inn="ИНН" comment="Комментраий" status="approval" status_text="Согласовано"></originator>
-			<originator originator="Отправитель 2" date_from="2017-05-20" legal_entity="ИП Иванов" inn="ИНН" comment="Комментраий" status="posted_for_approval" status_text="Подано на согласование"></originator>
-		</operator>
-		<operator name="mega" title="Мегафон">
-			<originator originator="Отправитель 1" date_from="2017-05-20" legal_entity="ИП Иванов" inn="ИНН" comment="Комментраий" status="approval" status_text="Согласовано"></originator>
-			<originator originator="Отправитель 2" date_from="2017-05-20" legal_entity="ИП Иванов" inn="ИНН" comment="Комментраий" status="posted_for_approval" status_text="Подано на согласование"></originator>
-		</operator>
-	</registry_originator>
+<registry_originator>
+	<operator name="mts" title="МТС">
+		<originator originator="Отправитель 1" date_from="2017-05-20" legal_entity="ИП Иванов" inn="ИНН" comment="Комментраий" status="approval" status_text="Согласовано"></originator>
+		<originator originator="Отправитель 2" date_from="2017-05-20" legal_entity="ИП Иванов" inn="ИНН" comment="Комментраий" status="posted_for_approval" status_text="Подано на согласование"></originator>
+	</operator>
+	<operator name="mega" title="Мегафон">
+		<originator originator="Отправитель 1" date_from="2017-05-20" legal_entity="ИП Иванов" inn="ИНН" comment="Комментраий" status="approval" status_text="Согласовано"></originator>
+		<originator originator="Отправитель 2" date_from="2017-05-20" legal_entity="ИП Иванов" inn="ИНН" comment="Комментраий" status="posted_for_approval" status_text="Подано на согласование"></originator>
+	</operator>
+</registry_originator>
 </response>
 ```
 Где:
@@ -1317,19 +1317,19 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <request>
-    <security>
-        <login value="логин" />
-        <password value="пароль" />
-    </security>
-	<registry_originator>
-		<originator originator="Отправитель 1" legal_entity="ИП Иванов" operator="mts" inn="ИНН" comment="Комментарий"></originator>
-		<originator originator="Отправитель 1" legal_entity="ИП Иванов" operator="tele2" inn="ИНН" comment="Комментарий"></originator>
-		<originator originator="Отправитель 2" legal_entity="ИП Иванов" operator="mts" inn="ИНН"></originator>
-	</registry_originator>
-	<delete_registry_originator>
-		<originator originator="Отправитель 3"></originator>
-		<originator originator="Отправитель 4" operator="mega"></originator>
-	</delete_registry_originator>
+<security>
+	<login value="логин" />
+	<password value="пароль" />
+</security>
+<registry_originator>
+	<originator originator="Отправитель 1" legal_entity="ИП Иванов" operator="mts" inn="ИНН" comment="Комментарий"></originator>
+	<originator originator="Отправитель 1" legal_entity="ИП Иванов" operator="tele2" inn="ИНН" comment="Комментарий"></originator>
+	<originator originator="Отправитель 2" legal_entity="ИП Иванов" operator="mts" inn="ИНН"></originator>
+</registry_originator>
+<delete_registry_originator>
+	<originator originator="Отправитель 3"></originator>
+	<originator originator="Отправитель 4" operator="mega"></originator>
+</delete_registry_originator>
 </request>
 ```
 Где:
@@ -1364,15 +1364,15 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-	<registry_originator>
-		<originator originator="Отправитель 1" operator="mts" inn="ИНН" status="add" error=""></originator>
-		<originator originator="Отправитель 1" operator="tele2" inn="ИНН" status="error" error="Описание ошибки"></originator>
-		<originator originator="Отправитель 2" operator="mts" inn="ИНН" status="add" error=""></originator>
-	</registry_originator>
-	<delete_registry_originator>
-		<originator originator="Отправитель 3" operator="" status="delete" error=""></originator>
-		<originator originator="Отправитель 4" operator="mega" status="not_found" error="Имя отправителя не обнаружено"></originator>
-	</delete_registry_originator>
+<registry_originator>
+	<originator originator="Отправитель 1" operator="mts" inn="ИНН" status="add" error=""></originator>
+	<originator originator="Отправитель 1" operator="tele2" inn="ИНН" status="error" error="Описание ошибки"></originator>
+	<originator originator="Отправитель 2" operator="mts" inn="ИНН" status="add" error=""></originator>
+</registry_originator>
+<delete_registry_originator>
+	<originator originator="Отправитель 3" operator="" status="delete" error=""></originator>
+	<originator originator="Отправитель 4" operator="mega" status="not_found" error="Имя отправителя не обнаружено"></originator>
+</delete_registry_originator>
 </response>
 ```
 Где:
