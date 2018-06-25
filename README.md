@@ -76,7 +76,7 @@ https://имя_хоста/xml/
 <message type="sms">
     <sender>Отправитель 1</sender>
     <text>Текст сообщения 1</text>
-	<translite>1</translite>
+    <translite>1</translite>
     <abonent phone="79033256699" number_sms="1" client_id_sms="101" time_send="2001-12-31 12:34" validity_period="2001-12-31 15:34" />
     <abonent phone="79033256699" number_sms="2" client_id_sms="102" time_send="2001-12-31 12:35" />
     <abonent phone="79033256699" number_sms="10" client_id_sms="110" time_send="" />
