@@ -77,13 +77,15 @@ https://имя_хоста/xml/
     <sender>Отправитель 1</sender>
     <text>Текст сообщения 1</text>
     <translite>1</translite>
+    <name_delivery>Рассылка 1</name_delivery>
     <abonent phone="79033256699" number_sms="1" client_id_sms="101" time_send="2001-12-31 12:34" validity_period="2001-12-31 15:34" />
     <abonent phone="79033256699" number_sms="2" client_id_sms="102" time_send="2001-12-31 12:35" />
     <abonent phone="79033256699" number_sms="10" client_id_sms="110" time_send="" />
 </message>
 <message>
     <sender>Отправитель 2</sender>
-    <text>Текстсообщения 2</text>
+    <text>Текст сообщения 2</text>
+    <name_delivery>Рассылка 2</name_delivery>
     <abonent phone="79033256699" number_sms="11" client_id_sms="111" />
     <abonent phone="79033256699" number_sms="12" client_id_sms="112" />
     <abonent phone="79033256699" number_sms="20" client_id_sms="120" />
@@ -95,6 +97,7 @@ https://имя_хоста/xml/
 	* **sms**  – обычная SMS.
 * **sender** – отправитель SMS. Именно это значение будет выводиться на телефоне абонента в поле от кого SMS.
 * **text** – текст SMS.
+* **name_delivery** – Название рассылки. По умолчанию "Шлюз";
 * **translite** - транслитерация текста СМС с кириллицы на латиницу (не обязательный параметр). Для транслитерации данный параметр должен быть равен 1.
 * **phone** – номер абонента, которому адресована SMS. В международном формате, например, 79000000001 (Для России), 380442589632 (Для Украины) и т.д.
 * **логин** - ваш логин в системе.
