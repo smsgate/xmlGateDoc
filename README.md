@@ -195,7 +195,7 @@ https://имя_хоста/xml/state.php
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текст ошибки</error>
+<error>текст ошибки</error>
 </response>
 ```
 **error** - текст ошибки может принимать следующие значения:
@@ -255,8 +255,8 @@ $GLOBALS['HTTP_RAW_POST_DATA']
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-    <id_sms>3234</id_sms>
-    <id_sms>3234</id_sms>
+<id_sms>3234</id_sms>
+<id_sms>3234</id_sms>
 </response>
 ```
 Где:
@@ -288,7 +288,7 @@ https://имя_хоста/xml/balance.php
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текст ошибки</error>
+<error>текст ошибки</error>
 </response>
 ```
 **error** - текст ошибки может принимать следующие значения:
@@ -300,9 +300,9 @@ https://имя_хоста/xml/balance.php
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-    <money currency="RUR">150</money>
-    <sms area="Россия">111</sms>
-    <sms area="Украина">111</sms>
+<money currency="RUR">150</money>
+<sms area="Россия">111</sms>
+<sms area="Украина">111</sms>
 </response>
 ```
 Где:
@@ -333,9 +333,9 @@ https://имя_хоста/xml/balance.php
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-    <money>8</money>
-    <sms area="Россия">8</sms>
-    <sms area="Украина">4</sms>
+<money>8</money>
+<sms area="Россия">8</sms>
+<sms area="Украина">4</sms>
 </response>
 ```
 # Запрос на получения списка отправителей
@@ -362,7 +362,7 @@ https://имя_хоста/xml/originator.php
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текст ошибки</error>
+<error>текст ошибки</error>
 </response>
 ```
 
@@ -376,10 +376,10 @@ https://имя_хоста/xml/originator.php
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-    <any_originator>FALSE</any_originatоr>
-    <list_originator>
-        <originator state="rejected">Отправитель</originator>
-    </list_originator>
+<any_originator>FALSE</any_originatоr>
+<list_originator>
+    <originator state="rejected">Отправитель</originator>
+</list_originator>
 </response>
 ```
 Где
@@ -417,7 +417,7 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текст ошибки</error>
+<error>текст ошибки</error>
 </response>
 ```
 **error** -
@@ -484,8 +484,8 @@ https://имя_хоста/xml/def.php
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-    <phone operator="Вымпелтелеком" region="Новосибирскаяобласть" time_zone="3">79612242243</phone>
-    <phone operator="Вымпелтелеком" region="Калининград" time_zone="-1">79612242244</phone>
+<phone operator="Вымпелтелеком" region="Новосибирскаяобласть" time_zone="3">79612242243</phone>
+<phone operator="Вымпелтелеком" region="Калининград" time_zone="-1">79612242244</phone>
 </response>
 ```
 Где:
@@ -519,7 +519,7 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текст ошибки</error>
+<error>текст ошибки</error>
 </response>
 ```
 **error** - текст ошибки может принимать следующие значения:
@@ -560,8 +560,8 @@ XML-документ:
     <password value="пароль" />
 </security>
 <bases>
-<base id_base="1234" name_base="Базаглавногоофиса" time_birth="12:48" local_time_birth="yes" day_before="1" originator_birth="fitnes" on_birth="yes">Поздравляем!</base>
-<base number_base="1" name_base="БазаМосковскогоофиса" time_birth="12:48" local_time_birth="yes" day_before="1" originator_birth="fitnes" on_birth="yes">Поздравляем!</base>
+    <base id_base="1234" name_base="Базаглавногоофиса" time_birth="12:48" local_time_birth="yes" day_before="1" originator_birth="fitnes" on_birth="yes">Поздравляем!</base>
+    <base number_base="1" name_base="БазаМосковскогоофиса" time_birth="12:48" local_time_birth="yes" day_before="1" originator_birth="fitnes" on_birth="yes">Поздравляем!</base>
 </bases>
 <delete_bases>
     <base id_base="1235" />
@@ -586,7 +586,7 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текст ошибки</error>
+<error>текст ошибки</error>
 </response>
 ```
 **error** - текст ошибки может принимать следующие значения:
@@ -635,7 +635,7 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текст ошибки</error>
+<error>текст ошибки</error>
 </response>
 ```
 **error** - текст ошибки может принимать следующие значения:
@@ -650,8 +650,8 @@ XML-документ:
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
 <phones page="1" num_pages="100">
-<phone phone="79612242243" region="Новосибирск " operator="Вымпелком" name="Константин" surname="Ермолаев" patronymic="Александрович" date_birth="1984-08-21" male="m" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" last_update="2011-03-25 08:39:48" />
-<phone phone="79612242244" region="Новосибирск" operator="Вымпелком" name="Константин" surname="Ермолаев" patronymic="Александрович" date_birth="1984-08-21" male="m" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" last_update="2011-03-25 08:39:48" />
+    <phone phone="79612242243" region="Новосибирск " operator="Вымпелком" name="Константин" surname="Ермолаев" patronymic="Александрович" date_birth="1984-08-21" male="m" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" last_update="2011-03-25 08:39:48" />
+    <phone phone="79612242244" region="Новосибирск" operator="Вымпелком" name="Константин" surname="Ермолаев" patronymic="Александрович" date_birth="1984-08-21" male="m" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" last_update="2011-03-25 08:39:48" />
 </phones>
 </response>
 ```
@@ -687,10 +687,10 @@ XML-документ:
     <password value="пароль" />
 </security>
 <base id_base="1234">
-<phone phone="79612242243" region="Новосибирск " operator="Вымпелком" name="Константин" surname="Ермолаев" patronymic="Александрович" date_birth="1984-08-21" male="мужской" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" number_phone="1"/>
-<phone phone="79612242244" region="Новосибирск " operator="Вымпелком" name="Константин" surname="Ермолаев" patronymic="Александрович" date_birth="1984-08-21" male="мужской" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" number_phone="2" />
-<phone phone="79612242243" action="delete" number_phone="5"/>
-<phone phone="79612242244" action="delete" number_phone="6"/>
+    <phone phone="79612242243" region="Новосибирск " operator="Вымпелком" name="Константин" surname="Ермолаев" patronymic="Александрович" date_birth="1984-08-21" male="мужской" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" number_phone="1"/>
+    <phone phone="79612242244" region="Новосибирск " operator="Вымпелком" name="Константин" surname="Ермолаев" patronymic="Александрович" date_birth="1984-08-21" male="мужской" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" number_phone="2" />
+    <phone phone="79612242243" action="delete" number_phone="5"/>
+    <phone phone="79612242244" action="delete" number_phone="6"/>
 </base>
 </request>
 ```
@@ -718,7 +718,7 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текстошибки</error>
+<error>текстошибки</error>
 </response>
 ```
 **error** - текст ошибки может принимать следующие значения:
@@ -733,10 +733,10 @@ XML-документ:
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
 <baseid_base="1234">
-<phone phone="79612242243" number_phone="1"/>insert</phone>
-<phone phone="79612242244" number_phone="2" />edit</phone>
-<phone phone="79612242243" number_phone="5"/>delete</phone>
-<phone phone="79612242244" number_phone="6" />not_found</phone>
+    <phone phone="79612242243" number_phone="1"/>insert</phone>
+    <phone phone="79612242244" number_phone="2" />edit</phone>
+    <phone phone="79612242243" number_phone="5"/>delete</phone>
+    <phone phone="79612242244" number_phone="6" />not_found</phone>
 </response>
 ```
 # Запрос на получение списка номеров из СТОП-листа
@@ -817,7 +817,7 @@ https://имя_хоста/xml/stop.php
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текст ошибки</error>
+<error>текст ошибки</error>
 </response>
 ```
 **error** - текст ошибки может принимать следующие значения:
@@ -830,9 +830,9 @@ https://имя_хоста/xml/stop.php
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-    <phone phone="79612242243">delete</phone>
-    <phone phone="79612242244">add</phone>
-    <phone phone="79612242245">not_found</phone>
+<phone phone="79612242243">delete</phone>
+<phone phone="79612242244">add</phone>
+<phone phone="79612242245">not_found</phone>
 </response>
 ```
 # Запрос на получение списка запланированных SMS
@@ -861,7 +861,7 @@ https://имя_хоста/xml/list_scheduled.php
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текст ошибки</error>
+<error>текст ошибки</error>
 </response>
 ```
 **error** - текст ошибки может принимать следующие значения:
@@ -875,8 +875,8 @@ https://имя_хоста/xml/list_scheduled.php
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
 <phones page="1" num_pages="100">
-<scheduled id_sms="1234" time_put_turn="2011-11-14 12:42:40" originator="kosty"  phone="79612242243" type_sms="sms" text_sms="ТекстSMS" count_sms="2" name_delivery="Названиерасылки" time_send="2011-11-14 21:00" validity_period="2011-11-17 21:00:00" />
-<scheduled id_sms="1235" time_put_turn="2011-11-14 12:42:40" originator="kosty" phone="79612242244" type_sms="sms" text_sms="ТекстSMS" count_sms="2" name_delivery="Названиерасылки" time_send="2011-11-14 21:00" validity_period="2011-11-17 21:00:00" />
+    <scheduled id_sms="1234" time_put_turn="2011-11-14 12:42:40" originator="kosty"  phone="79612242243" type_sms="sms" text_sms="ТекстSMS" count_sms="2" name_delivery="Названиерасылки" time_send="2011-11-14 21:00" validity_period="2011-11-17 21:00:00" />
+    <scheduled id_sms="1235" time_put_turn="2011-11-14 12:42:40" originator="kosty" phone="79612242244" type_sms="sms" text_sms="ТекстSMS" count_sms="2" name_delivery="Названиерасылки" time_send="2011-11-14 21:00" validity_period="2011-11-17 21:00:00" />
 </phones>
 </response>
 ```
@@ -927,7 +927,7 @@ https://имя_хоста/xml/scheduled.php
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текстошибки</error>
+<error>текстошибки</error>
 </response>
 ```
 **error** - текст ошибки может принимать следующие значения:
@@ -940,8 +940,8 @@ https://имя_хоста/xml/scheduled.php
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-    <scheduled id_sms="1234">delete</scheduled>
-    <scheduled id_sms="1235">not_found</scheduled>
+<scheduled id_sms="1234">delete</scheduled>
+<scheduled id_sms="1235">not_found</scheduled>
 </response>
 ```
 # Запрос на получение времени изменения чего либо
@@ -970,7 +970,7 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текст ошибки</error>
+<error>текст ошибки</error>
 </response>
 ```
 **error** - текст ошибки может принимать следующие значения:
@@ -984,7 +984,7 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-    <obgect time_update="2012-01-01 12:12:12" />
+<obgect time_update="2012-01-01 12:12:12" />
 </response>
 ```
 Где
@@ -1044,8 +1044,8 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <time>2012-12-17 18:34:27</time>
-</respo
+<time>2012-12-17 18:34:27</time>
+</response>
 ```
 
 # Запрос на получение статистики
@@ -1108,8 +1108,8 @@ XML-документ:
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
 <stats num_stats="100">
-<stat id_sms="324044392" id_state="1229469388" operator="МТС" name_delivery="Кабинет" phone="7980536****" originator="TELECOM-SMS" time_change_state="2016-08-10 23:04:32" time="2016-08-10 23:04:18" status="deliver" status_translate="доставлено"  text="ТЕКСТ СМС" price="1.05" part_no="1" num_parts="2"></stat>
-<stat id_sms="324044392" id_state="1229469389" operator="МТС" name_delivery="Кабинет" phone="7980536****" originator="TELECOM-SMS" time_change_state="2016-08-10 23:04:32" time="2016-08-10 23:04:18" status="deliver" text="ТЕКСТ СМС ПРОДОЛЖЕНИЕ" price="1.05" part_no="2" num_parts="2"></stat>
+    <stat id_sms="324044392" id_state="1229469388" operator="МТС" name_delivery="Кабинет" phone="7980536****" originator="TELECOM-SMS" time_change_state="2016-08-10 23:04:32" time="2016-08-10 23:04:18" status="deliver" status_translate="доставлено"  text="ТЕКСТ СМС" price="1.05" part_no="1" num_parts="2"></stat>
+    <stat id_sms="324044392" id_state="1229469389" operator="МТС" name_delivery="Кабинет" phone="7980536****" originator="TELECOM-SMS" time_change_state="2016-08-10 23:04:32" time="2016-08-10 23:04:18" status="deliver" text="ТЕКСТ СМС ПРОДОЛЖЕНИЕ" price="1.05" part_no="2" num_parts="2"></stat>
 </stats>
 </response>
 ```
@@ -1157,7 +1157,7 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текст ошибки</error>
+<error>текст ошибки</error>
 </response>
 ```
 **error** - текст ошибки может принимать следующие значения:
@@ -1216,7 +1216,7 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текст ошибки</error>
+<error>текст ошибки</error>
 </response>
 ```
 **error** - текст ошибки может принимать следующие значения:
@@ -1276,7 +1276,7 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текст ошибки</error>
+<error>текст ошибки</error>
 </response>
 ```
 **error** - текст ошибки может принимать следующие значения:
@@ -1303,7 +1303,7 @@ XML-документ:
 ```
 Где:
 * **operator name** - Оператор. mts, mega, tele2.
-* **operator ** - Заголовок оператора. МТС, Мегафон, Теле2. 
+* **operator** - Заголовок оператора. МТС, Мегафон, Теле2. 
 * **originator** - Имя Отправителя.
 * **date_from** - Дата начала.
 * **legal_entity** - Юр.Лицо.
@@ -1362,7 +1362,7 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текст ошибки</error>
+<error>текст ошибки</error>
 </response>
 ```
 **error** - текст ошибки может принимать следующие значения:
@@ -1427,7 +1427,7 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <response>
-    <error>текст ошибки</error>
+<error>текст ошибки</error>
 </response>
 ```
 **error** - текст ошибки может принимать следующие значения:
