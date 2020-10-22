@@ -78,17 +78,17 @@ https://имя_хоста/xml/
     <text>Текст сообщения 1</text>
     <translite>1</translite>
     <name_delivery>Рассылка 1</name_delivery>
-    <abonent phone="79033256699" number_sms="1" client_id_sms="101" time_send="2001-12-31 12:34" validity_period="2001-12-31 15:34" />
-    <abonent phone="79033256699" number_sms="2" client_id_sms="102" time_send="2001-12-31 12:35" />
-    <abonent phone="79033256699" number_sms="10" client_id_sms="110" time_send="" />
+    <abonent phone="79001234567" number_sms="1" client_id_sms="101" time_send="2020-03-31 12:34" validity_period="2020-03-31 15:34" />
+    <abonent phone="79001234568" number_sms="2" client_id_sms="102" time_send="2020-03-31 12:35" />
+    <abonent phone="79001234569" number_sms="10" client_id_sms="110" time_send="" />
 </message>
 <message>
     <sender>Отправитель 2</sender>
     <text>Текст сообщения 2</text>
     <name_delivery>Рассылка 2</name_delivery>
-    <abonent phone="79033256699" number_sms="11" client_id_sms="111" />
-    <abonent phone="79033256699" number_sms="12" client_id_sms="112" />
-    <abonent phone="79033256699" number_sms="20" client_id_sms="120" />
+    <abonent phone="79001234567" number_sms="11" client_id_sms="111" />
+    <abonent phone="79001234568" number_sms="12" client_id_sms="112" />
+    <abonent phone="79001234569" number_sms="20" client_id_sms="120" />
 </message>
 </request>
 ```
@@ -99,7 +99,7 @@ https://имя_хоста/xml/
 * **text** – текст SMS.
 * **name_delivery** – Название рассылки. По умолчанию "Шлюз";
 * **translite** - транслитерация текста СМС с кириллицы на латиницу (не обязательный параметр). Для транслитерации данный параметр должен быть равен 1.
-* **phone** – номер абонента, которому адресована SMS. В международном формате, например, 79000000001 (Для России), 380442589632 (Для Украины) и т.д.
+* **phone** – номер абонента, которому адресована SMS. В международном формате, например, 79001234567 (Для России), 380441234567 (Для Украины) и т.д.
 * **логин** - ваш логин в системе.
 * **пароль** - ваш пароль в системе.
 * **number_sms**  - номер сообщения в пределах отправляемого XML документа.
@@ -209,9 +209,9 @@ https://имя_хоста/xml/state.php
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-<state id_sms="IDSMS в системе для проверки статуса" time="2011-01-01 12:57:46" num_parts="2" price="1.15">Статус</state>
-<state id_sms="IDSMS в системе для проверки статуса" time="2011-01-01 12:57:46" num_parts="2" price="1.15">Статус</state>
-<state id_sms="IDSMS в системе для проверки статуса" time="2011-01-01 12:57:46" num_parts="2" price="1.15">Статус</state>
+<state id_sms="IDSMS в системе для проверки статуса" time="2020-01-01 12:57:46" num_parts="2" price="1.15">Статус</state>
+<state id_sms="IDSMS в системе для проверки статуса" time="2020-01-01 12:57:46" num_parts="2" price="1.15">Статус</state>
+<state id_sms="IDSMS в системе для проверки статуса" time="2020-01-01 12:57:46" num_parts="2" price="1.15">Статус</state>
 </response>
 ```
 Где
@@ -238,8 +238,8 @@ $GLOBALS['HTTP_RAW_POST_DATA']
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <request>
-    <state id_sms="ID SMS в системе для проверки статуса" time="2011-01-01 12:57:46">Статус</state>
-    <state id_sms="ID SMS в системе для проверки статуса" time="2011-01-01 12:57:46">Статус</state>
+    <state id_sms="ID SMS в системе для проверки статуса" time="2020-01-01 12:57:46">Статус</state>
+    <state id_sms="ID SMS в системе для проверки статуса" time="2020-01-01 12:57:46">Статус</state>
 </request>
 ```
 Где:
@@ -403,7 +403,7 @@ XML-документ:
         <login value="логин" />
         <password value="пароль" />
     </security>
-<time start="2012-01-31 12:23:00" end="2012-02-31 12:23:00" />
+<time start="2020-01-31 12:23:00" end="2020-02-31 12:23:00" />
 </request>
 ```
 Где
@@ -430,8 +430,8 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-<sms id_sms="1234" date_receive="2012-01-31 12:55:55" originator="79612242243" prefix="IGRA" phone="79611111111">ТекстСМС.</sms>
-<sms id_sms="1234" date_receive="2012-01-31 12:55:55" originator="79612242243" prefix="IGRA" phone="79611111111">ТекстСМС.</sms>
+<sms id_sms="1234" date_receive="2020-01-31 12:55:53" originator="79001234567" prefix="AKCIYA" phone="3443">ТекстСМС.</sms>
+<sms id_sms="1234" date_receive="2020-01-31 12:55:53" originator="79001234568" prefix="AKCIYA" phone="3443">ТекстСМС.</sms>
 </response>
 ```
 Где
@@ -456,8 +456,8 @@ https://имя_хоста/xml/def.php
     <password value="пароль" />
 </security>
 <phones>
-    <phone>79612242243</phone>
-    <phone>79612242244</phone>
+    <phone>79001234567</phone>
+    <phone>79001234568</phone>
 </phones>
 </request>
 ```
@@ -484,8 +484,8 @@ https://имя_хоста/xml/def.php
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-<phone operator="Вымпелтелеком" region="Новосибирскаяобласть" time_zone="3">79612242243</phone>
-<phone operator="Вымпелтелеком" region="Калининград" time_zone="-1">79612242244</phone>
+<phone operator="Мегафон" region="Москва" time_zone="3">79001234567</phone>
+<phone operator="Мегафон" region="Калининград" time_zone="-1">79001234568</phone>
 </response>
 ```
 Где:
@@ -650,8 +650,8 @@ XML-документ:
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
 <phones page="1" num_pages="100">
-    <phone phone="79612242243" region="Новосибирск " operator="Вымпелком" name="Константин" surname="Ермолаев" patronymic="Александрович" date_birth="1984-08-21" male="m" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" last_update="2011-03-25 08:39:48" />
-    <phone phone="79612242244" region="Новосибирск" operator="Вымпелком" name="Константин" surname="Ермолаев" patronymic="Александрович" date_birth="1984-08-21" male="m" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" last_update="2011-03-25 08:39:48" />
+    <phone phone="79001234567" region="Москва " operator="Мегафон" name="Иван" surname="Иванов" patronymic="Иванович" date_birth="1988-08-28" male="m" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" last_update="2011-03-25 08:39:48" />
+    <phone phone="79001234568" region="Москва" operator="Мегафон" name="Иван" surname="Иванов" patronymic="Иванович" date_birth="1988-08-28" male="m" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" last_update="2011-03-25 08:39:48" />
 </phones>
 </response>
 ```
@@ -687,10 +687,10 @@ XML-документ:
     <password value="пароль" />
 </security>
 <base id_base="1234">
-    <phone phone="79612242243" region="Новосибирск " operator="Вымпелком" name="Константин" surname="Ермолаев" patronymic="Александрович" date_birth="1984-08-21" male="мужской" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" number_phone="1"/>
-    <phone phone="79612242244" region="Новосибирск " operator="Вымпелком" name="Константин" surname="Ермолаев" patronymic="Александрович" date_birth="1984-08-21" male="мужской" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" number_phone="2" />
-    <phone phone="79612242243" action="delete" number_phone="5"/>
-    <phone phone="79612242244" action="delete" number_phone="6"/>
+    <phone phone="79001234567" region="Москва " operator="Мегафон" name="Иван" surname="Иванов" patronymic="Иванович" date_birth="1988-08-28" male="мужской" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" number_phone="1"/>
+    <phone phone="79001234568" region="Москва " operator="Мегафон" name="Иван" surname="Иванов" patronymic="Иванович" date_birth="1988-08-28" male="мужской" addition_1="Первоедополнительноеполе" addition_2="второе" addition_3="третье" addition_4="четвертое" addition_5="пятое" number_phone="2" />
+    <phone phone="79001234569" action="delete" number_phone="5"/>
+    <phone phone="79001234570" action="delete" number_phone="6"/>
 </base>
 </request>
 ```
@@ -733,10 +733,10 @@ XML-документ:
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
 <baseid_base="1234">
-    <phone phone="79612242243" number_phone="1"/>insert</phone>
-    <phone phone="79612242244" number_phone="2" />edit</phone>
-    <phone phone="79612242243" number_phone="5"/>delete</phone>
-    <phone phone="79612242244" number_phone="6" />not_found</phone>
+    <phone phone="79001234567" number_phone="1"/>insert</phone>
+    <phone phone="79001234568" number_phone="2" />edit</phone>
+    <phone phone="79001234569" number_phone="5"/>delete</phone>
+    <phone phone="79001234570" number_phone="6" />not_found</phone>
 </response>
 ```
 # Запрос на получение списка номеров из СТОП-листа
@@ -776,8 +776,8 @@ XML-документ:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-<phone>79612242243</phone>
-<phone>79612242244</phone>
+<phone>79001234567</phone>
+<phone>79001234568</phone>
 </response>
 ```
 
@@ -797,12 +797,12 @@ https://имя_хоста/xml/stop.php
     <password value="пароль" />
 </security>
 <add_stop>
-    <phone phone="79612242243" />
-    <phone phone="79612242244" />
+    <phone phone="79001234567" />
+    <phone phone="79001234568" />
 </add_stop>
 <delete_stop>
-    <phone phone="79612242243" />
-    <phone phone="79612242244" />
+    <phone phone="79001234569" />
+    <phone phone="79001234570" />
 </delete_stop>
 </request>
 ```
@@ -830,9 +830,9 @@ https://имя_хоста/xml/stop.php
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
-<phone phone="79612242243">delete</phone>
-<phone phone="79612242244">add</phone>
-<phone phone="79612242245">not_found</phone>
+<phone phone="79001234567">delete</phone>
+<phone phone="79001234568">add</phone>
+<phone phone="79001234569">not_found</phone>
 </response>
 ```
 # Запрос на получение списка запланированных SMS
@@ -875,8 +875,8 @@ https://имя_хоста/xml/list_scheduled.php
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
 <phones page="1" num_pages="100">
-    <scheduled id_sms="1234" time_put_turn="2011-11-14 12:42:40" originator="kosty"  phone="79612242243" type_sms="sms" text_sms="ТекстSMS" count_sms="2" name_delivery="Названиерасылки" time_send="2011-11-14 21:00" validity_period="2011-11-17 21:00:00" />
-    <scheduled id_sms="1235" time_put_turn="2011-11-14 12:42:40" originator="kosty" phone="79612242244" type_sms="sms" text_sms="ТекстSMS" count_sms="2" name_delivery="Названиерасылки" time_send="2011-11-14 21:00" validity_period="2011-11-17 21:00:00" />
+    <scheduled id_sms="1234" time_put_turn="2020-11-14 12:42:40" originator="SENDER_1"  phone="79001234567" type_sms="sms" text_sms="ТекстSMS" count_sms="2" name_delivery="Названиерасылки" time_send="2011-11-14 21:00" validity_period="2011-11-17 21:00:00" />
+    <scheduled id_sms="1235" time_put_turn="2020-11-14 12:42:40" originator="SENDER_1" phone="79001234568" type_sms="sms" text_sms="ТекстSMS" count_sms="2" name_delivery="Названиерасылки" time_send="2011-11-14 21:00" validity_period="2011-11-17 21:00:00" />
 </phones>
 </response>
 ```
@@ -1064,7 +1064,7 @@ XML-документ:
   <login value="логин" />
   <password value="пароль" />
 </security>
-<stats date_start="2016-08-21" date_stop="2016-08-21" state="deliver" originator="TELECOM-SMS" phone="" operator="" from_hour="00" from_minute="00" to_hour="" to_minute="" />
+<stats date_start="2016-08-21" date_stop="2016-08-21" state="deliver" originator="SENDER_1" phone="" operator="" from_hour="00" from_minute="00" to_hour="" to_minute="" />
 </request>
 ```
 Где:
@@ -1108,8 +1108,8 @@ XML-документ:
 <?xml version="1.0" encoding="utf-8" ?>
 <response>
 <stats num_stats="100">
-    <stat id_sms="324044392" id_state="1229469388" operator="МТС" name_delivery="Кабинет" phone="7980536****" originator="TELECOM-SMS" time_change_state="2016-08-10 23:04:32" time="2016-08-10 23:04:18" status="deliver" status_translate="доставлено"  text="ТЕКСТ СМС" price="1.05" part_no="1" num_parts="2"></stat>
-    <stat id_sms="324044392" id_state="1229469389" operator="МТС" name_delivery="Кабинет" phone="7980536****" originator="TELECOM-SMS" time_change_state="2016-08-10 23:04:32" time="2016-08-10 23:04:18" status="deliver" text="ТЕКСТ СМС ПРОДОЛЖЕНИЕ" price="1.05" part_no="2" num_parts="2"></stat>
+    <stat id_sms="100123" id_state="2000123" operator="МТС" name_delivery="Кабинет" phone="7900123****" originator="SENDER_1" time_change_state="2016-08-10 23:04:32" time="2016-08-10 23:04:18" status="deliver" status_translate="доставлено"  text="ТЕКСТ СМС" price="1.05" part_no="1" num_parts="2"></stat>
+    <stat id_sms="100124" id_state="2000124" operator="МТС" name_delivery="Кабинет" phone="7900123****" originator="SENDER_1" time_change_state="2016-08-10 23:04:32" time="2016-08-10 23:04:18" status="deliver" text="ТЕКСТ СМС ПРОДОЛЖЕНИЕ" price="1.05" part_no="2" num_parts="2"></stat>
 </stats>
 </response>
 ```
