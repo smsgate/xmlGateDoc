@@ -52,7 +52,6 @@ curl_setopt ($ch, CURLOPT_HTTPHEADER, array ('Content-type: text/xml','charset=u
 curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt ($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt ($ch, CURLOPT_SSL_VERIFYHOST, 0);
-curl_setopt ($ch, CURLOPT_CRLF, true);
 curl_setopt ($ch, CURLOPT_POST, true);
 curl_setopt ($ch, CURLOPT_POSTFIELDS, $src);
 curl_setopt ($ch, CURLOPT_URL, $href);
